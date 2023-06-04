@@ -27,8 +27,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Resize with arrows
 keymap("n", "<S-J>", ":resize +2<CR>", opts)
 keymap("n", "<S-K>", ":resize -2<CR>", opts)
-keymap("n", "<S-H>", ":vertical resize -2<CR>", opts)
-keymap("n", "<S-L>", ":vertical resize +2<CR>", opts)
+keymap("n", "<S-H>", ":vertical resize +2<CR>", opts)
+keymap("n", "<S-L>", ":vertical resize -2<CR>", opts)
 
 -- Compile document, be it groff/LaTeX/markdown/etc
 keymap("","<leader>c",":w! !compiler <c-r>%<CR>",opts)
@@ -41,3 +41,6 @@ keymap("","<leader>p",":!opout <c-r>%<CR><CR>",opts)
 
 -- Spell-check set to <leader>o, 'o' for 'orthography'
 keymap("n","<leader>o",":setlocal spell!<CR>", opts)
+
+-- Enable css colors
+keymap("","<leader>h",":ColorizerToggle<CR>", opts)
