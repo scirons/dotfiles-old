@@ -76,7 +76,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+--  use "nvim-telescope/telescope.nvim"
 
   -- Colors
   use "oncomouse/nvim-colorizer.lua"
@@ -90,6 +90,7 @@ return packer.startup(function(use)
 
   -- Vanilla
   use "junegunn/goyo.vim"
+  use "sedm0784/vim-you-autocorrect"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
