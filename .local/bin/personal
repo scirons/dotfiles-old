@@ -1,6 +1,0 @@
-#!/bin/sh
-
-#Mount secret Personal partition trough a usb stick partition key
-sudo /usr/bin/cryptsetup open --cipher aes-xts-plain64 --type plain --key-file=/dev/disk/by-partuuid/47afee7d-02 /dev/vg01/lv02 Personal-scyron
-
-sudo /usr/bin/mount /dev/mapper/Personal-scyron ~/Personal
