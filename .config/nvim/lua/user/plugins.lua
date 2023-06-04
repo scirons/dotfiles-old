@@ -51,7 +51,6 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-
   -- Colorschemes
   use "nekonako/xresources-nvim"
 
@@ -78,6 +77,11 @@ return packer.startup(function(use)
 
   -- Colors
   use "oncomouse/nvim-colorizer.lua"
+  use "lukas-reineke/headlines.nvim"
+  use {
+    "michaelb/sniprun",
+    run = "bash ./install.sh"
+  }
 
   -- Treesitter
   use {
@@ -86,12 +90,14 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "nvim-orgmode/orgmode"
+  use "jbyuki/venn.nvim"
 
   -- Vanilla
   use "junegunn/goyo.vim"
   use "sedm0784/vim-you-autocorrect"
   use "preservim/vim-markdown"
   use "dhruvasagar/vim-table-mode"
+  use "gyim/vim-boxdraw"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
