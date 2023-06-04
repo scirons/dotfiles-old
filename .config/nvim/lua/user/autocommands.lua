@@ -1,11 +1,28 @@
 -- autocmd! remove all autocommands, if entered under a group it will clear that group
+
+-- Automatically deletes all trailing whitespaces and newlines
 vim.cmd [[
     autocmd BufWritePre * let currPos = getpos(".")
     autocmd BufWritePre * %s/\s\+$//e
     autocmd BufWritePre * %s/\n\+\%$//e
     autocmd BufWritePre *.[ch] %s/\%$/\r/e
     autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
-    autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }
+]]
+
+-- Run xrdb whenever Xdefaults of Xresources are updated.
+vim.cmd [[
+  autocmd BufRead,BufNewFile Xresources,Xdefaults,xresources,xdefaults set filetype=xdefaults
+	autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
+]]
+
+-- For sources
+-- vim.cmd [[
+-- 	autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/; sudo make install && { killall -q dwm;setsid -f dwm }
+-- ]]
+
+-- General
+vim.cmd [[
+
   augroup _general_settings
     autocmd!
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
