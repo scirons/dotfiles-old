@@ -11,10 +11,11 @@ require "user.xresources"
 local options = {
   title = true,                            -- automatically set screen title
   backup = false,                          -- creates a backup file
- --  go = "a",				   -- append text after cursor to the first column on go command
+   --  go = "a",				                   -- append text after cursor to the first column on go command
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  spelllang = "en_us",
   conceallevel = 0,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = false,                         -- highlight all matches on previous search pattern
@@ -28,7 +29,7 @@ local options = {
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
-  -- termguicolors = true,                    -- set term gui colors (most terminals support this)
+  termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
@@ -57,10 +58,13 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-vim.cmd "hi CursorLine term=underline cterm=NONE gui=NONE ctermbg=black"
-vim.cmd "hi TabLineFill ctermfg=black"
-vim.cmd "highlight Pmenu ctermfg=yellow"
-vim.cmd "highlight Pmenu ctermbg=black"
+vim.cmd "hi LineNr guifg=#d17b49"
+vim.cmd "hi Normal guibg=#171717"
+vim.cmd "hi signcolumn guibg=#171717"
+-- vim.cmd "hi CursorLine term=underline cterm=NONE gui=NONE ctermbg=black"
+-- vim.cmd "hi TabLineFill ctermfg=black"
+-- vim.cmd "highlight Pmenu ctermfg=yellow"
+-- vim.cmd "highlight Pmenu ctermbg=black"
 vim.cmd "hi LspReferenceRead ctermbg=237 guibg=#303030"
 vim.cmd "hi LspReferenceText ctermbg=237 guibg=#303030"
 vim.cmd "hi LspReferenceWrite ctermbg=237 guibg=#303030"
