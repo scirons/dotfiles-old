@@ -15,20 +15,20 @@ done; unset command
 alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
-	rm="rm -vi" \
+	rm="rm -vI" \
 	bc="bc -ql" \
 	mkd="mkdir -pv" \
-	yt="youtube-dl --add-metadata -i" \
+	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner" \
-  lf="lfub" \
+	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
+	ccat="highlight --out-format=ansi" \
+	ip="ip -color=auto"
 
 # These common commands are just too long! Abbreviate them.
 alias \
@@ -36,7 +36,7 @@ alias \
 	g="git" \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
-	sdn="sudo shutdown -h now" \
+ 	sdn="shutdown -h now" \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="pacman" \
@@ -46,8 +46,7 @@ alias \
 	z="zathura"
 
 alias \
+ 	lf="lfub" \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
 	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
-	dots="git --git-dir=$HOME/.local/src/dotfiles/.git --work-tree=$HOME/.local/src/dotfiles" \
-	priv="git --git-dir=$HOME/.local/src/dotprivates/.git --work-tree=$HOME/.local/src/dotifles" \
