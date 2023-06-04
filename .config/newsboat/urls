@@ -1,8 +1,34 @@
+" "
+"--BLOGS--"
 https://lukesmith.xyz/rss.xml
-https://lindypress.net/rss
-https://notrelated.xyz/rss
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
 https://landchad.net/rss.xml
 https://based.cooking/index.xml
+https://lindypress.net/rss
+https://notrelated.xyz/rss
+
+" "
+"--NEWS--"
+https://www.euronews.com/rss?format=mrss&level=theme&name=news
+https://feeds.a.dj.com/rss/RSSMarketsMain.xml "fin" "~The Wall Street Journal"
+https://www.ft.com/world?format=rss "fin" "~Financial Times | World"
+https://www.investing.com/rss/news.rss "fin" "~Investing"
+https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml "fin" # CoinDesk
+https://cryptopanic.com/news/rss/ "fin" "~Cryptopanic Feed"
+https://americanmind.org/feed/
+https://www.tfp.org/feed/
+https://original.antiwar.com/feed/
+http://feeds.feedburner.com/AWCBlog
+
+" "
+"--YOUTUBE--"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
+
+" "
+"--TECH--"
 https://artixlinux.org/feed.php "tech"
 https://www.archlinux.org/feeds/news/ "tech"
+https://hackaday.com/blog/feed "tech"
+
+" "
+"--TWITTER/GAB--"
+https://nitter.it/BurryArchive/rss "fin"
