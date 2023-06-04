@@ -1,10 +1,9 @@
-local status_ok, configs = pcall(require, "orgmode")
+local status_ok, orgmode = pcall(require, "orgmode")
 if not status_ok then
   return
 end
 
 -- Load custom tree-sitter grammar for org filetype
-require('orgmode').setup_ts_grammar()
 
 
 require('orgmode').setup{
