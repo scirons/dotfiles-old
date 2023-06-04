@@ -1,0 +1,5 @@
+#!/bin/sh
+
+st -e ffplay -fflags nobuffer -rtsp_transport tcp rtsp://192.168.1.254/live0 &
+st -e ffplay -fflags nobuffer -rtsp_transport tcp rtsp://192.168.1.251/live0 &
+st -e ffplay -fflags nobuffer -rtsp_transport tcp rtsp://192.168.1.250/live0 &
