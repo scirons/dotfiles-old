@@ -46,7 +46,7 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  background = "light",                     -- system colorschemes used properly
+  background = "dark",                     -- system colorschemes used properly
 }
 
 vim.opt.shortmess:append "c"
@@ -60,11 +60,3 @@ end
  vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
  vim.cmd "hi LineNr guifg=#d17b49"
  vim.cmd "hi Normal guibg=#171717"
- vim.cmd "hi signcolumn guibg=#171717"
- vim.cmd "hi CursorLine term=underline cterm=NONE gui=NONE ctermbg=grey"
- vim.cmd "hi TabLineFill ctermfg=black"
- vim.cmd "highlight Pmenu ctermfg=yellow"
- vim.cmd "highlight Pmenu ctermbg=black"
- vim.cmd "hi LspReferenceRead ctermbg=237 guibg=#303030"
- vim.cmd "hi LspReferenceText ctermbg=237 guibg=#303030"
- vim.cmd "hi LspReferenceWrite ctermbg=237 guibg=#303030"
