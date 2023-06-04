@@ -55,7 +55,7 @@ require('lualine').setup {
   },
  sections = {
     lualine_a = {'mode'},
-    lualine_b = {"%{&spell ? '[en_US.utf8]' : '[NoSpell]'}"},
+    lualine_b = {"%{&spell ? '[en_US/IT]' : '[NoSpell]'}"},
     lualine_c = {'branch','filename'},
     lualine_x = {'fileformat', 'filetype', 'diff', 'diagnostics'},
     lualine_y = { progress, 'progress'  },
