@@ -1,4 +1,0 @@
-{NVIDIA Corporation/NVIDIA GeForce GTX 660/PCIe/SSE2/4.5.0 NVIDIA 470.129.06}=SUPPORTED
-{NVIDIA Corporation/NVIDIA GeForce GTX 660/PCIe/SSE2/4.5.0 NVIDIA 470.141.03}=SUPPORTED
-{Mesa/X.org/llvmpipe (LLVM 14.0.6, 256 bits)/4.5 (Core Profile) Mesa 22.2.3}=SUPPORTED
-{AMD/AMD Radeon RX 5700 XT (navi10, LLVM 14.0.6, DRM 3.48, 6.0.11-arch1-1)/4.6 (Core Profile) Mesa 22.2.3}=SUPPORTED
