@@ -11,3 +11,10 @@ killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
 xmodmap -e 'keycode 135 = Super_R'
 # Turn off the caps lock if on since there is no longer a key for it.
 xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
+# If my travel keyboard is connected (which lacks super keys) make the left alt super.
+lsusb | grep -q "Lenovo USB Travel Keyboard" && key="Lite-On Tech Lenovo USB Travel Keyboard with Ultra Nav Mouse" &&
+xinput set-prop "$key" 310 1 &&
+xinput set-prop "$key" 291 {0,0,1} &&
+xinput set-prop "$key" 299 1.0
+# Set proper trackpoint speed/sensibility
+xinput set-prop "$key" 155 4.000000, 0.000000, 0.000000, 0.000000, 4.000000, 0.000000, 0.000000, 0.000000, 1.000000
