@@ -10,3 +10,8 @@ map r reload
 map R rotate
 map i recolor
 map p print
+
+set recolor
+set recolor-lightcolor \#171717
+set recolor-keephue
+set default-bg \#171717
