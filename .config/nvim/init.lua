@@ -15,7 +15,7 @@ local options = {
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-  spelllang = "en_us",
+  spelllang = "en_us,it",
   conceallevel = 0,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = false,                         -- highlight all matches on previous search pattern
@@ -55,16 +55,16 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-vim.cmd "hi LineNr guifg=#d17b49"
-vim.cmd "hi Normal guibg=#171717"
-vim.cmd "hi signcolumn guibg=#171717"
--- vim.cmd "hi CursorLine term=underline cterm=NONE gui=NONE ctermbg=black"
--- vim.cmd "hi TabLineFill ctermfg=black"
--- vim.cmd "highlight Pmenu ctermfg=yellow"
--- vim.cmd "highlight Pmenu ctermbg=black"
-vim.cmd "hi LspReferenceRead ctermbg=237 guibg=#303030"
-vim.cmd "hi LspReferenceText ctermbg=237 guibg=#303030"
-vim.cmd "hi LspReferenceWrite ctermbg=237 guibg=#303030"
+ vim.cmd "set whichwrap+=<,>,[,],h,l"
+ vim.cmd [[set iskeyword+=-]]
+ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+ vim.cmd "hi LineNr guifg=#d17b49"
+ vim.cmd "hi Normal guibg=#171717"
+ vim.cmd "hi signcolumn guibg=#171717"
+ vim.cmd "hi CursorLine term=underline cterm=NONE gui=NONE ctermbg=grey"
+ vim.cmd "hi TabLineFill ctermfg=black"
+ vim.cmd "highlight Pmenu ctermfg=yellow"
+ vim.cmd "highlight Pmenu ctermbg=black"
+ vim.cmd "hi LspReferenceRead ctermbg=237 guibg=#303030"
+ vim.cmd "hi LspReferenceText ctermbg=237 guibg=#303030"
+ vim.cmd "hi LspReferenceWrite ctermbg=237 guibg=#303030"
