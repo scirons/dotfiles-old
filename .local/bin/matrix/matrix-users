@@ -1,0 +1,6 @@
+#!/bin/sh
+while IFS= read -r line
+do
+   curl -XPOST -H "Content-Type: application/json" -d "$line" 'https://matrix.org/_matrix/client/r0/rooms/!UZZPGiOZKrjRywrgLs:plan9.rocks/invite?access_token=syt_aW52aXRlLWJvdA_QYKAgROpYeKKlbWcEXnT_2CthEz'
+   sleep 7
+done < luke_user
