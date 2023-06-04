@@ -10,6 +10,7 @@ map r reload
 map R rotate
 map i recolor
 map p print
+map g goto top
 
 set recolor
 set recolor-lightcolor \#171717
