@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/scyron/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["goyo.vim"] = {
+    loaded = true,
+    path = "/home/scyron/.local/share/nvim/site/pack/packer/start/goyo.vim",
+    url = "https://github.com/junegunn/goyo.vim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/scyron/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -203,11 +208,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/scyron/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
-  },
-  ["vim-css-color"] = {
-    loaded = true,
-    path = "/home/scyron/.local/share/nvim/site/pack/packer/start/vim-css-color",
-    url = "https://github.com/ap/vim-css-color"
   },
   ["xresources-nvim"] = {
     loaded = true,

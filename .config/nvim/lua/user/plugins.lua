@@ -57,7 +57,6 @@ return packer.startup(function(use)
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use 'nekonako/xresources-nvim'
 
-
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -81,7 +80,6 @@ return packer.startup(function(use)
 
   -- Colors
   use "oncomouse/nvim-colorizer.lua"
-  use "ap/vim-css-color"
 
   -- Treesitter
   use {
@@ -90,6 +88,8 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
+  -- Vanilla
+  use "junegunn/goyo.vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
