@@ -1,46 +1,53 @@
-local status, lualine = pcall(require, "lualine")
-if (not status) then return end
 
-local custom_gruvbox = require "lualine.themes.codedark"
-custom_gruvbox.normal.a.bg = '#d17b49'
-custom_gruvbox.normal.c.fg = '#c0b18b'
+local colors = {
+  orange   = '#d17b49',
+  yellow   = '#af865a',
+  black    = '#1f1f1f',
+  grey     = '#4A3637',
+  white    = '#c0b18b',
+  cyan     = '#6d715e',
+  magenta  = '#755759',
+}
 
-lualine.setup {
-  options = {
-    icons_enabled = true,
-    theme = custom_gruvbox,
-    section_separators = {left = '', right = ''},
-    component_separators = {left = '', right = ''},
-    disabled_filetypes = {}
+local scyrons_theme = {
+  normal = {
+    a = { fg = colors.black, bg = colors.cyan },
+    b = { fg = colors.black, bg = colors.cyan },
+    c = { fg = colors.white, bg = colors.grey },
+
+  },
+
+  insert  = { a = { fg = colors.black, bg = colors.orange } },
+  visual  = { a = { fg = colors.black, bg = colors.white  } },
+  replace = { a = { fg = colors.black, bg = colors.yellow } }
+  },
+
+require('lualine').setup {
+    options = {
+    theme = scyrons_theme,
+    component_separators = '|',
+    section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch'},
-    lualine_c = {{
-      'filename',
-      file_status = true, -- displays file status (readonly status, modified status)
-      path = 0 -- 0 = just filename, 1 = relative path, 2 = absolute path
-    }},
-    lualine_x = {
-      { 'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
-      'encoding',
-      'filetype'
+    lualine_a = {
+      { 'mode', separator = { left = '' }, right_padding = 2 },
     },
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_b = { 'filename', 'branch' },
+    lualine_c = { 'fileformat' },
+    lualine_x = {},
+    lualine_y = { 'filetype', 'progress' },
+    lualine_z = {
+      { 'location', separator = { right = '' }, left_padding = 2 },
+    },
   },
   inactive_sections = {
-    lualine_a = {},
+    lualine_a = { 'filename' },
     lualine_b = {},
-    lualine_c = {{
-      'filename',
-      file_status = true, -- displays file status (readonly status, modified status)
-      path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
-    }},
-    lualine_x = {'location'},
+    lualine_c = {},
+    lualine_x = {},
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = { 'location' },
   },
   tabline = {},
-  extensions = {'fugitive'}
+  extensions = {},
 }
