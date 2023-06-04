@@ -21,7 +21,7 @@ alias \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
-  lf="lf-ueberzug" \
+  lf="lfub" \
 
 # Colorize commands when possible.
 alias \
