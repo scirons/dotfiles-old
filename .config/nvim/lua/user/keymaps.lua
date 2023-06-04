@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
-local optsc = { cnoremap = true } 
+local optsc = { cnoremap = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -33,9 +33,11 @@ keymap("n", "<S-L>", ":vertical resize +2<CR>", opts)
 -- Compile document, be it groff/LaTeX/markdown/etc
 keymap("","<leader>c",":w! !compiler <c-r>%<CR>",opts)
 
--- Goyo plugin activation for prose	
--- keymap(""," <leader>f",":Goyo | set bg=light | set linebreak<CR>",opts)
+-- Goyo plugin activation for prose
+keymap("","<leader>f",":Goyo | set linebreak<CR>",opts)
 
 -- Open corresponding .pdf/.html or preview
 keymap("","<leader>p",":!opout <c-r>%<CR><CR>",opts)
 
+-- Spell-check set to <leader>o, 'o' for 'orthography'
+keymap("n","<leader>o",":setlocal spell!<CR>", opts)
