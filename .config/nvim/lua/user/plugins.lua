@@ -46,7 +46,6 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
@@ -54,8 +53,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use 'nekonako/xresources-nvim'
+  use "nekonako/xresources-nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -64,6 +62,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "nvim-orgmode/orgmode"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -76,7 +75,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
---  use "nvim-telescope/telescope.nvim"
+  -- use "nvim-telescope/telescope.nvim"
 
   -- Colors
   use "oncomouse/nvim-colorizer.lua"
@@ -91,6 +90,8 @@ return packer.startup(function(use)
   -- Vanilla
   use "junegunn/goyo.vim"
   use "sedm0784/vim-you-autocorrect"
+  use "preservim/vim-markdown"
+  use "dhruvasagar/vim-table-mode"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

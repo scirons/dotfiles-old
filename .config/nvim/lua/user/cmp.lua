@@ -8,6 +8,12 @@ if not snip_status_ok then
   return
 end
 
+-- local org_status_ok, luasnip = pcall(require, "orgmode")
+-- if not org_status_ok then
+--   return
+-- end
+
+require('orgmode').setup_ts_grammar()
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -103,6 +109,7 @@ cmp.setup {
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         luasnip = "[Snippet]",
+        orgmode = "[org]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -110,6 +117,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "orgmode" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },

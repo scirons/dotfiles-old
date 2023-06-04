@@ -22,9 +22,14 @@ vim.cmd [[
 
 -- Ensure files are read as what I want
 vim.cmd [[
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=org
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
+]]
+
+-- Disable folding for org
+vim.cmd [[
+  autocmd FileType org setlocal nofoldenable
 ]]
 
 -- General
