@@ -16,7 +16,6 @@
 #    called directly instead of normal lf.
 
 # Basic vars
-set drawbox true
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
@@ -45,6 +44,12 @@ cmd open ${{
 	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
 	application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
 	application/pgp-encrypted) $EDITOR $fx ;;
+	application/vnd.openxmlformats-officedocument.wordprocessingml.document|application/vnd.oasis.opendocument.text) setsid -f lowriter $fx >/dev/null 2>&1 ;;
+	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet|application/octet-stream|application/vnd.oasis.opendocument.spreadsheet|application/vnd.oasis.opendocument.spreadsheet-template) setsid -f localc $fx >/dev/null 2>&1 ;;
+	application/vnd.openxmlformats-officedocument.presentationml.presentation|application/vnd.oasis.opendocument.presentation-template|application/vnd.oasis.opendocument.presentation|application/vnd.ms-powerpoint) setsid -f loimpress $fx >/dev/null 2>&1 ;;
+	application/vnd.oasis.opendocument.graphics|application/vnd.oasis.opendocument.graphics-template) setsid -f lodraw $fx >/dev/null 2>&1 ;;
+	application/vnd.oasis.opendocument.formula) setsid -f lomath $fx >/dev/null 2>&1 ;;
+	application/vnd.oasis.opendocument.database) setsid -f lobase $fx >/dev/null 2>&1 ;;
         *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac
 }}
@@ -115,8 +120,8 @@ map O $mimeopen --ask $f
 map A rename # at the very end
 map c push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
-map i push A<a-b><a-b><a-f> # before extention
-map a push A<a-b> # after extention
+map i push A<a-b><a-b><a-f> # before extension
+map a push A<a-b> # after extension
 map B bulkrename
 map b $setbg $f
 
