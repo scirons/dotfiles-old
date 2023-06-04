@@ -20,6 +20,13 @@ vim.cmd [[
 -- 	autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/; sudo make install && { killall -q dwm;setsid -f dwm }
 -- ]]
 
+-- Ensure files are read as what I want
+vim.cmd [[
+	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+	autocmd BufRead,BufNewFile *.tex set filetype=tex
+]]
+
 -- General
 vim.cmd [[
 
