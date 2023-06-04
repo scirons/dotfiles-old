@@ -1,0 +1,37 @@
+#!/bin/sh
+
+current_song="$(mpc current)"
+
+if [[ "$current_song" = "" ]]; then
+
+echo " "
+
+exit 0
+
+else
+playpause=$(mpc | awk '/\[.*]/{split($0, a, " "); print a[1]}')
+if [[ "$playpause" = "[playing]" ]]; then
+	current_song="$current_song"
+
+elif [[ "$playpause" = "[paused]" ]]; then
+	current_song="$current_song"
+fi
+fi
+
+echo "$current_song"
+
+
+pidof -x sb-mpdup >/dev/null 2>&1 || sb-mpdup >/dev/null 2>&1 &
+
+case $BLOCK_BUTTON in
+	1) mpc status | filter ; setsid -f "$TERMINAL" -e ncmpcpp ;;  # right click, pause/unpause
+	2) mpc toggle | filter ;;  # right click, pause/unpause
+	3) mpc status | filter ; notify-send " Music module" "\- Shows mpd song playing.
+- ⏸ when paused.
+- Left click opens ncmpcpp.
+- Middle click pauses.
+- Scroll changes track.";;  # right click, pause/unpause
+	4) mpc prev   | filter ;;  # scroll up, previous
+	5) mpc next   | filter ;;  # scroll down, next
+	6) mpc status | filter ; "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac

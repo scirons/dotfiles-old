@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# human-readable name;urlname;icon
+coins=";BTCUSDC
+;ETHUSDC"
+
+date="$(date "+%a %d %b %H:%M")"
+
+# Directory where currency info is stored.
+dir="${XDG_DATA_HOME:-$HOME/.local/share}/crypto-prices"
+
+# rating=curl -s https://api.binance.com/api/v1/ticker/price?symbol=ETHBRL
+
+	echo "$coins" | while IFS=';' read -r glyph web; do
+		val="$(curl -s "https://api.binance.com/api/v1/ticker/price?symbol="$web"" | jq -r .price)" &&
+		echo  "$date;$val" >> "$dir/$web"
+		echo -ne "$glyph""$val" | sed 's/.\{6\}$//'| sed 's/...$//'
+	done; [ -d "$dir" ] && touch "$dir"
+	exit

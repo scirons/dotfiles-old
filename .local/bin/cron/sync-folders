@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Syncs design data from Windows to selected directories.
+
+rsync -uvrP --files-from=.config/sync-folders/Design ~/Design/ ~/Documents/
+
+rsync -uvrP --files-from=.config/sync-folders/Documents ~/Documents/ ~/Design/

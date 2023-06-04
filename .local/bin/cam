@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ffplay -fflags nobuffer -rtsp_transport tcp rtsp://scyron:rzefe8v3cbkun@192.168.88.24/live0

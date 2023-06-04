@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for img in *.webp; do
+	filename=${img%.*}
+	ffmpeg -i "$filename.webp" "$filename.jpg"
+done

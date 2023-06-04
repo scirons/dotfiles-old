@@ -1,0 +1,15 @@
+#!/bin/sh
+
+NAME_ARQ=CTOM.html
+wget -O "$NAME_ARQ" https://br.investing.com/currencies/streaming-forex-rates-majors > /dev/null 2>&1
+
+
+EUR=$(cat "$NAME_ARQ" | tr ' ' '\n' |  grep  "sb_last_1617"  | cut -d'>' -f2 | sed 's/<.*//'| sed 's/..$//')
+GBP=$(cat "$NAME_ARQ" | tr ' ' '\n' |  grep  "sb_last_1736"  | cut -d'>' -f2 | sed 's/<.*//'| sed 's/..$//')
+USD=$(cat "$NAME_ARQ" | tr ' ' '\n' |  grep -m1 "pid-2103-bid" | cut -d'>' -f2 | sed 's/<.*//'| sed 's/..$//')
+
+
+echo "€$EUR" '$'$USD "£$GBP"
+
+
+rm "$NAME_ARQ"

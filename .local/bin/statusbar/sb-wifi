@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wifi="$(nmcli -t -f NAME connection show --active)"
+signal="$(nmcli dev wifi | grep -E '^[*]' | awk '/*/ {print $8}')"
+
+
+
+echo """$wifi" "$signal""%"

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# This gives the user a list of videos they can select and watch without a
+# browser.
+
+echo "$(cat ~/.config/bookmarks/videos)" | grep -P "^$(echo "$( cat ~/.config/bookmarks/videos)" | grep "https:" | sed 's/\t.*//g' | dmenu -i -p "Learn about what? (ESC to cancel)" -l 20 | awk '{print $1}')\s" | sed 's/.*\t//' | xargs -r mpv

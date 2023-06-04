@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This gives the user the option to watch youtube buku bookmarks links with mpv and youtube-viewer without a browser.
+
+echo "$(buku -p -f 40)" | sed 's/\t/ | /g' | sort -n | dmenu -i -p "mpv" -l 20 | cut -d ' ' -f 1| awk '{print $1}'\s |  xargs -r youtube-viewer
