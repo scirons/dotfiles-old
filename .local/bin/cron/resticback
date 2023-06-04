@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pass=$(pass Server/gdrive)
+
+export RESTIC_PASSWORD="$pass"
+
+restic -r rclone:crypt: backup ~/Documents/ --tag auto --verbose
