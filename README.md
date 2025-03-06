@@ -1,4 +1,4 @@
-# Scirons (Gabriel Marafon's dotfiles)
+# Gabriel's Dotfiles
 
 These are my personal dotfiles.
 
